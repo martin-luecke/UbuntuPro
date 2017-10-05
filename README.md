@@ -12,3 +12,7 @@ http://www.linux-hardware-guide.de/2012-10-07-edimax-ew-7811un-wireless-usb-150-
 
 working fix:
 https://adamscheller.com/systems-administration/rtl8192cu-fix-wifi/
+
+
+Slack:
+https://levlaz.org/installing-slack-on-ubuntu/
