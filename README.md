@@ -1,6 +1,5 @@
 # UbuntuPro
 
-<<<<<<< HEAD
 working:
 * Booting (Kernel 4.10.0-35-generic)
 * Keyboard, touchpad, and basic touchbar functionality (sometimes)
@@ -119,4 +118,4 @@ https://levlaz.org/installing-slack-on-ubuntu/
 
 GPU Driver:
 http://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver%E2%80%93Release-Notes.aspx
->>>>>>> 95c29c713cc3a74357a3ebe770162da84778971d
+
