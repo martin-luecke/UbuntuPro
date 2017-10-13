@@ -1,3 +1,32 @@
-Follow instructions from Readme, but use c file from here:
+c file from here:
 https://elixir.free-electrons.com/linux/v4.9.11/source/drivers/platform/x86/apple-gmux.c
-c-file also in tihis repo.
+
+### Screen Brightness Control
+
+Screen brightness control works out of the box on MacBookPro13,1 and MacBookPro13,2, but requires a kernel patch on MacBookPro13,3 (see also https://github.com/Dunedan/mbp-2016-linux/issues/2). The following will create and install the patched `apple-gmux`:
+```
+mkdir apple-gmux
+pushd apple-gmux
+
+curl -o apple-gmux.patch 'https://bugzilla.kernel.org/attachment.cgi?id=192601'
+curl -o apple-gmux.c 'https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/plain/drivers/platform/x86/apple-gmux.c?id=refs/tags/v4.9.11'
+
+patch < apple-gmux.patch
+
+echo -e '
+obj-m += apple-gmux.o
+
+all:
+\tmake -C /lib/modules/`uname -r`/build M=`pwd` modules
+' > Makefile
+make
+
+mod=$(ls /lib/modules/`uname -r`/kernel/drivers/platform/x86/apple-gmux.ko*)
+sudo mv $mod{,.orig}
+sudo cp apple-gmux.ko /lib/modules/`uname -r`/kernel/drivers/platform/x86/
+sudo depmod
+
+popd
+
+sudo reboot
+```
