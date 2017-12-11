@@ -119,3 +119,5 @@ https://levlaz.org/installing-slack-on-ubuntu/
 GPU Driver:
 http://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver%E2%80%93Release-Notes.aspx
 
+Neuere Quellen für Ubuntu, z.B. mit boost 1.64
+https://packages.ubuntu.com/bionic/amd64/libboost1.65-all-dev/download
